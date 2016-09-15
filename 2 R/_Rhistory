@@ -1,0 +1,15 @@
+str(trees)
+plot(trees$Height~trees$Girth,xlim=c(8,21),ylim=c(0,90),col="blue",type="o",xlab="Girth", ylab="Height and Volume", pch="+")
+points(trees$Girth,trees$Volume,col="red",type="o", pch="o")
+legend("bottomright",c("Height","Volume"),col=c("blue","red"),lty=c(1,1))
+library(multtest); data(golub)
+x<-golub[101,]
+y<-golub[102,]
+plot(x,y,xlab=golub.gnames[101,2],ylab=golub.gnames[102,2])
+library(ALL); data(ALL)
+B1<-exprs(ALL[,ALL$BT=="B1"])
+hist(B1)
+library(multtest); data(golub)
+sd.all<-apply(golub,1,sd)
+sd.all
+sum(sd.all>1)
